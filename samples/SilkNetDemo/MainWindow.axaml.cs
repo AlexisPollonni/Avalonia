@@ -11,7 +11,7 @@ namespace SilkNetDemo
         {
             InitializeComponent();
 
-            this.Unloaded += delegate(object? sender, RoutedEventArgs args)
+            Unloaded += delegate
             {
                 var vulkanDemo = this.Get<VulkanDemo>("VulkanDemo1");
                 vulkanDemo.Dispose();
@@ -19,6 +19,7 @@ namespace SilkNetDemo
 
 #if DEBUG
             this.AttachDevTools();
+            Renderer.DrawFps = true;
 #endif
         }
 

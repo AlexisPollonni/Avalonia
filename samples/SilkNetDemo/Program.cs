@@ -2,6 +2,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Logging;
 using Avalonia.Vulkan;
 
 namespace SilkNetDemo
@@ -30,10 +31,10 @@ namespace SilkNetDemo
                 {
                     VulkanInstanceCreationOptions =
                     {
-                        //UseDebug = true
+                        UseDebug = true
                     }
                 })
                 .UsePlatformDetect()
-                .LogToTrace();
+                .LogToTrace(LogEventLevel.Debug, "Vulkan");
     }
 }
