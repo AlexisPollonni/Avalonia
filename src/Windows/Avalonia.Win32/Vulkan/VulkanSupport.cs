@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using Avalonia.Platform.Surfaces;
 using Avalonia.Vulkan;
 using Avalonia.Win32.Interop;
-using JetBrains.Annotations;
 
 namespace Avalonia.Win32.Vulkan;
 
@@ -13,7 +12,7 @@ internal class VulkanSupport
     [DllImport("vulkan-1.dll")]
     private static extern IntPtr vkGetInstanceProcAddr(IntPtr instance, string name);
     
-    [CanBeNull]
+
     public static VulkanPlatformGraphics TryInitialize(VulkanOptions options) =>
         VulkanPlatformGraphics.TryCreate(options ?? new(), new VulkanPlatformSpecificOptions
         {
